@@ -1,0 +1,19 @@
+{
+  "name": "tweakpane-declarative",
+  "version": "1.0.0-beta.1",
+  "description": "A declarative interface for Tweakpane",
+  "main": "src/index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alberto-re/tweakpane-declarative.git"
+  },
+  "author": "Alberto Re <alberto.re@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "tweakpane": "^3.1.0"
+  },
+  "bugs": {
+    "url": "https://github.com/alberto-re/tweakpane-declarative/issues"
+  },
+  "homepage": "https://github.com/alberto-re/tweakpane-declarative#readme"
+}
