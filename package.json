@@ -1,6 +1,6 @@
 {
   "name": "tweakpane-declarative",
-  "version": "1.0.0-beta.1",
+  "version": "1.0.0-beta.2",
   "description": "A declarative interface for Tweakpane",
   "main": "src/index.js",
   "repository": {
