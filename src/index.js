@@ -23,11 +23,13 @@ function declarePane(components, cfg = {}) {
 function addInput(input, parent, components) {
     components[input.name] = input.default;
     const _input = parent.addInput(components, input.name, input);
-	_input.on('change', function(ev) {
-		input.events.forEach((cb) => {
-			cb(ev)
-		})
-	});
+	if ('events' in input && Array.isArray(input.events)) {
+		_input.on('change', function(ev) {
+			input.events.forEach((cb) => {
+				cb(ev)
+			})
+		});
+	}
 }
 
 module.exports = declarePane;
