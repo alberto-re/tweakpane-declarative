@@ -7,7 +7,7 @@ A declarative interface for [Tweakpane](https://github.com/cocopon/tweakpane).
 First, run `npm install tweakpane-declarative` for your app. Then, in your code:
 
 ```js
-import declarePane from 'tweakpane-declarative';
+import { declarePane }from 'tweakpane-declarative';
 
 ...
 const PARAMS = [
@@ -31,7 +31,21 @@ const myCallback = function(ev) {
 
 const PARAMS = [
 	{ name: 'debug', default: false, events: [ myCallback ]},
-]
+];
+```
+
+## Add a separator between components
+
+Add the SEPARATOR object in the desired position after importing it in the module namespace:
+
+```js
+import { declarePane, SEPARATOR } from 'tweakpane-declarative';
+
+const PARAMS = [
+    { name: 'checkbox', default: false },
+    SEPARATOR,
+    { name: 'debug', label: 'Debug on/off', default: false },
+];
 ```
 
 ## License

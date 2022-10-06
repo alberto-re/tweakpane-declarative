@@ -1,10 +1,12 @@
 {
   "name": "tweakpane-declarative",
-  "version": "1.0.0-beta.4",
+  "version": "1.0.0-beta.5",
   "description": "A declarative interface for Tweakpane",
   "main": "src/index.js",
+  "type": "module",
   "scripts": {
-    "lint": "npx eslint ./src"
+    "lint": "npx eslint ./src ./test",
+    "test": "node ./node_modules/mocha/bin/mocha test/*.spec.js --bail --exit"
   },
   "pre-commit": [
     "lint"
@@ -23,9 +25,12 @@
   },
   "homepage": "https://github.com/alberto-re/tweakpane-declarative#readme",
   "devDependencies": {
+    "chai": "^4.3.6",
     "eslint": "^8.24.0",
     "eslint-config-airbnb-base": "^15.0.0",
     "eslint-plugin-import": "^2.26.0",
+    "jsdom": "^20.0.1",
+    "mocha": "^10.0.0",
     "pre-commit": "^1.2.2"
   }
 }

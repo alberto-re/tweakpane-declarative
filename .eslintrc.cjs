@@ -11,6 +11,12 @@ module.exports = {
     sourceType: 'module',
   },
   rules: {
-    'no-param-reassign': 0
+    'no-param-reassign': 0,
+    'import/extensions': [
+      'error',
+      {
+          'js': 'ignorePackages'
+      }
+  ]
   },
 };

@@ -1,5 +1,7 @@
 import { Pane } from 'tweakpane';
 
+export const SEPARATOR = { name: '__separator__' };
+
 function addInput(input, parent, components) {
   components[input.name] = input.default;
   const added = parent.addInput(components, input.name, input);
@@ -11,8 +13,11 @@ function addInput(input, parent, components) {
     });
   }
 }
+function addSeparator(parent) {
+  parent.addSeparator();
+}
 
-function declarePane(components, cfg = {}) {
+export function declarePane(components, cfg = {}) {
   const pane = new Pane(cfg);
 
   components.forEach((component) => {
@@ -24,6 +29,8 @@ function declarePane(components, cfg = {}) {
       component.inputs.forEach((input) => {
         addInput(input, folder, components);
       });
+    } else if (component.name === SEPARATOR.name) {
+      addSeparator(pane);
     } else {
       addInput(component, pane, components);
     }
@@ -31,5 +38,3 @@ function declarePane(components, cfg = {}) {
 
   return pane;
 }
-
-module.exports = declarePane;
