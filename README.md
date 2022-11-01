@@ -13,6 +13,7 @@ import { declarePane }from 'tweakpane-declarative';
 const PARAMS = [
     { name: 'checkbox', default: false },
     { name: 'quantity', min: 0, max: 100, step: 10,  default: 20 },
+    { name: 'point2d', default: { x: 50, y: 25 }, picker: 'inline', expanded: true },
     { name: 'debug', label: 'Debug on/off', default: false },
     { name: 'theme', label: 'Theme', default: 'light', options: { Dark: 'dark', Light: 'light' } },
 ];
