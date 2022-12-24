@@ -1,3 +1,5 @@
+![CI](https://github.com/alberto-re/tweakpane-declarative/actions/workflows/ci.yaml/badge.svg)
+
 # tweakpane-declarative
 
 A declarative interface for [Tweakpane](https://github.com/cocopon/tweakpane).
@@ -7,7 +9,7 @@ A declarative interface for [Tweakpane](https://github.com/cocopon/tweakpane).
 First, run `npm install tweakpane-declarative` for your app. Then, in your code:
 
 ```js
-import { declarePane }from 'tweakpane-declarative';
+import { declarePane } from 'tweakpane-declarative';
 
 ...
 const PARAMS = [
