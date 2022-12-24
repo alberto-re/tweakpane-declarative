@@ -11,11 +11,12 @@ import { declarePane }from 'tweakpane-declarative';
 
 ...
 const PARAMS = [
-    { name: 'checkbox', default: false },
-    { name: 'quantity', min: 0, max: 100, step: 10,  default: 20 },
-    { name: 'point2d', default: { x: 50, y: 25 }, picker: 'inline', expanded: true },
-    { name: 'debug', label: 'Debug on/off', default: false },
-    { name: 'theme', label: 'Theme', default: 'light', options: { Dark: 'dark', Light: 'light' } },
+    { button: 'reset', events: [ resetCallback ] },
+    { input: 'checkbox', default: false },
+    { input: 'quantity', min: 0, max: 100, step: 10,  default: 20 },
+    { input: 'point2d', default: { x: 50, y: 25 }, picker: 'inline', expanded: true },
+    { input: 'debug', label: 'Debug on/off', default: false },
+    { input: 'theme', label: 'Theme', default: 'light', options: { Dark: 'dark', Light: 'light' } },
 ];
 
 pane = declarePane(PARAMS);
@@ -31,7 +32,7 @@ const myCallback = function(ev) {
 }
 
 const PARAMS = [
-	{ name: 'debug', default: false, events: [ myCallback ]},
+	{ input: 'debug', default: false, events: [ myCallback ]},
 ];
 ```
 
@@ -43,9 +44,9 @@ Add the SEPARATOR object in the desired position after importing it in the modul
 import { declarePane, SEPARATOR } from 'tweakpane-declarative';
 
 const PARAMS = [
-    { name: 'checkbox', default: false },
+    { input: 'checkbox', default: false },
     SEPARATOR,
-    { name: 'debug', label: 'Debug on/off', default: false },
+    { input: 'debug', label: 'Debug on/off', default: false },
 ];
 ```
 

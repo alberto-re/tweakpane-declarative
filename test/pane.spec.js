@@ -20,7 +20,7 @@ describe('declarePane()', () => {
   });
   describe('when providing a simple boolean parameter', () => {
     it('should return a panel with one input binding as child', () => {
-      const PARAMS = [{ name: 'toggle', default: true }];
+      const PARAMS = [{ input: 'toggle', default: true }];
       const pane = declarePane(PARAMS);
       chai.expect(pane.children.length).to.equal(1);
       chai.expect(pane.children[0].label).to.equal('toggle');
@@ -28,7 +28,7 @@ describe('declarePane()', () => {
   });
   describe('when providing a simple 2d point parameter', () => {
     it('should return a panel with one input binding as child', () => {
-      const PARAMS = [{ name: 'point2d', default: { x: 250, y: -100 } }];
+      const PARAMS = [{ input: 'point2d', default: { x: 250, y: -100 } }];
       const pane = declarePane(PARAMS);
       chai.expect(pane.children.length).to.equal(1);
       chai.expect(pane.children[0].label).to.equal('point2d');
@@ -37,7 +37,7 @@ describe('declarePane()', () => {
   describe('when providing the label attribute for an input', () => {
     it('should return a panel with the input binding correctly labeled', () => {
       const PARAMS = [
-        { name: 'toggle', label: 'Toggle on/off', default: true },
+        { input: 'toggle', label: 'Toggle on/off', default: true },
       ];
       const pane = declarePane(PARAMS);
       chai.expect(pane.children[0].label).to.equal('Toggle on/off');
@@ -47,7 +47,7 @@ describe('declarePane()', () => {
     it('should return a panel with the input binding value set as the provided default', () => {
       const PARAMS = [
         {
-          name: 'theme',
+          input: 'theme',
           label: 'Theme',
           default: 'light',
           options: { Dark: 'dark', Light: 'light' },
@@ -64,15 +64,25 @@ describe('declarePane()', () => {
   describe('when adding a separator element', () => {
     it('should return a panel with a separator in the correct position', () => {
       const PARAMS = [
-        { name: 'first', default: true },
+        { input: 'first', default: true },
         SEPARATOR,
-        { name: 'second', default: true },
+        { input: 'second', default: true },
       ];
       const pane = declarePane(PARAMS);
       chai.expect(pane.children.length).to.equal(3);
       chai
         .expect(pane.children[1].element.innerHTML)
         .to.equal('<hr class="tp-sprv_r">');
+    });
+  });
+  describe('when providing a simple button parameter', () => {
+    it('should return a panel with one button binding as child', () => {
+      const PARAMS = [{ button: 'reset' }];
+      const pane = declarePane(PARAMS);
+      chai.expect(pane.children.length).to.equal(1);
+      chai
+        .expect(pane.children[0].element.getElementsByTagName('button')[0].innerHTML)
+        .to.equal('<div class="tp-btnv_t">reset</div>');
     });
   });
 });
